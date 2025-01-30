@@ -1,6 +1,6 @@
 # PŁ: Zaawansowane Zagadnienia Programowania w Javie - Edycja 2025
 
-### Zaliczenie - zarys 2025
+## Zaliczenie - zarys 2025
 
 - Projekt grupowy: od 3 do 6 osób (brak odstępstw)
 - Tematyka realizowanego projektu: dowolna
@@ -22,7 +22,36 @@
 		 - [ ] Aplikacja wykorzystująca ostatnie nowości w **JDK** (np. Local-Variable Type Inference, Text Blocks, Sealed Classes, Pattern Matching dla instanceof, Virtual Threads, Records, Structured Concurrency)
 		 - [ ] ...
 		 - [ ] ...
-		 - [ ] ....
-		 - [ ] ....
+		 - [ ] ...
+		 - [ ] ...
     - UI oraz UX nie mają znaczenia i podczas prezentacji demonstracyjnej można użyć narzędzi typu Swagger albo Postman  
     - Unikanie typowych aplikacji CRUD
+
+
+## Propozycje tematów 2025
+- IntelliJ
+- JDK Updates (9~23)
+- Spring 101
+- Spring 102
+- Microservices Basic
+- Microservices Advanced
+
+
+## Ramowy plan zajęć
+ Lp | Temat | Data       | Prowadzący | Uwagi                                                                                                  
+----|---------------------|------------|------------|-------------
+ 1  ||||
+ 2  ||||
+ 3  ||||                                        
+ 4  | Przedstawienie pomysłu na projekt |||                                             
+ 5  ||||
+ 6  ||||
+ 7  ||||
+ 8  ||||
+ 9  ||||
+ 10 ||||
+ 11 | Sprawdzanie postępu realizacji projektu |||                                              
+ 12 ||||
+ 13 ||||
+ 14 ||||
+ 15 | Finalne przedstawienie zrealizowanego projektu |||
