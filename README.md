@@ -13,7 +13,7 @@
 	  
     - Praktyczna implementacja i wdrożenie rozwiązań, tematów, narzędzi prezentowanych podczas zajęć (nie muszą być wszystkie, ok. 60% jest ok?)
 		 - [ ] Aplikacja oparta o **Spring (Boot) Framework** 
-		 - [ ] Integracja z zewnętrznym zasobem po **REST** z wykorzystaniem publicznego API (TODO: dodać przykładową listę takich) wraz z wykorzystaniem (przetworzeniem) otrzymanych danych 
+		 - [ ] Integracja z zewnętrznym zasobem po **REST** z wykorzystaniem publicznego API (np.: https://github.com/public-apis/public-apis) wraz z wykorzystaniem (przetworzeniem) otrzymanych danych 
 		 - [ ] Zaprojektowanie własnego API z wykorzystaniem biblioteki **OpenAPI** wraz z drugą aplikacją, która konsumuje udostępnione API. Klient będzie wykonywał zapytania HTTP do serwisu i analizował otrzymane dane.
 		 - [ ] Architektura mikroserwisowa z wykorzystaniem **Spring Cloud Eureka**, umożliwiająca rejestrację i wykrywanie usług. Aplikacja będzie składała się z minimum dwóch mikroserwisów, które będą się wzajemnie komunikowały przy użyciu Spring Eureka jako serwera rejestracji usług.
 		 - [ ] Wykorzystanie **Spring Cloud Config Server**, który centralizuje zarządzanie konfiguracją dla wielu mikroserwisów. Dzięki temu, wszystkie serwisy w systemie mogą korzystać z jednej wspólnej konfiguracji, przechowywanej w centralnym miejscu (np. w plikach YAML na oddzielnym repozytorium Git), a zmiany w konfiguracji są natychmiastowo propagowane do aplikacji.
@@ -24,8 +24,8 @@
 		 - [ ] ...
 		 - [ ] ...
 		 - [ ] ...
-    - UI oraz UX nie mają znaczenia i podczas prezentacji demonstracyjnej można użyć narzędzi typu Swagger albo Postman  
-    - Unikanie typowych aplikacji CRUD
+    - UI oraz UX nie mają znaczenia, podczas prezentacji można użyć narzędzi typu Swagger albo Postman  
+    - Unikanie typowych aplikacji Create-Read-Update-Delete (CRUD)
 
 
 ## Propozycje tematów 2025
