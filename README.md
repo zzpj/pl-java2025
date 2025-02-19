@@ -40,18 +40,18 @@
 ## Ramowy plan zajęć
  Lp | Temat | Data       | Prowadzący | Uwagi                                                                                                  
 ----|---------------------|------------|------------|-------------
- 1  ||||
- 2  ||||
- 3  ||||                                        
- 4  | Przedstawienie pomysłu na projekt |||                                             
- 5  ||||
- 6  ||||
- 7  ||||
- 8  ||||
- 9  ||||
- 10 ||||
- 11 | Sprawdzanie postępu realizacji projektu |||                                              
- 12 ||||
- 13 ||||
- 14 ||||
- 15 | Finalne przedstawienie zrealizowanego projektu |||
+ 1  || 03.03 ||
+ 2  || 10.03 ||
+ 3  || 17.03 ||                                        
+ 4  | Przedstawienie pomysłu na projekt | 24.03 ||                                             
+ 5  || 31.03 ||
+ 6  || 07.04 ||
+ 7  || 28.04 ||
+ 8  || 05.05 ||
+ 9  || 12.05 ||
+ 10 || 19.05 ||
+ 11 | Sprawdzanie postępu realizacji projektu | 26.05 ||                                              
+ 12 || 02.06 ||
+ 13 || 09.06 ||
+ 14 || 16.06 ||
+ 15 | Finalne przedstawienie zrealizowanego projektu | 23.06 ||
