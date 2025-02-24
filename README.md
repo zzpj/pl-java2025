@@ -35,6 +35,8 @@
 - Spring 102
 - Microservices Basic
 - Microservices Advanced
+- Mutation testing (pitest)
+- From Java to Go(lang)
 
 
 ## Ramowy plan zajęć
