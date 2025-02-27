@@ -32,9 +32,9 @@
 - IntelliJ
 - JDK Updates (9~23)
 - Refleksja w Javie
-- Cucumber-BDD + AssertJ
-- Integrację z modelami AI przez http + biblioteki do AI w Javie
-- Statyczną analizę kodu
+- Cucumber (BDD) + AssertJ
+- Integracja z modelami AI przez http + biblioteki do AI w Javie
+- Statyczna analizę kodu
 - Współbieżność
 - Interoperacyjność Javy np. z Pythonem
 - Spring 101: Podstawowe zagadnienia, MVC, RestController, HttpClient, JPA
