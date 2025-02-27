@@ -31,19 +31,28 @@
 ## Propozycje tematów 2025
 - IntelliJ
 - JDK Updates (9~23)
-- Spring 101
-- Spring 102
-- Microservices Basic
+- Refleksja w Javie
+- Cucumber-BDD + AssertJ
+- Integrację z modelami AI przez http +  biblioteki do AI w Javie
+- Statyczną analizę kodu
+- Współbieżność
+- Interoperacyjność Javy np. z Pythonem
+- Spring 101: Podstawowe zagadnienia, MVC, RestController, HttpClient, JPA
+- Spring 102: Security
+- Spring 103: Spring proxy-based AOP + AspectJ + Spring aspectj-based AOP
+- Spring 104: Tranzakcje, mechanizm Retryable, OpenAPI
+- Microservices Podstawy: 
 - Microservices Advanced
 - Mutation testing (pitest)
 - From Java to Go(lang)
 
 
+
 ## Ramowy plan zajęć
  Lp | Temat | Data       | Prowadzący | Uwagi                                                                                                  
 ----|---------------------|------------|------------|-------------
- 1  || 03.03 ||
- 2  || 10.03 ||
+ 1  | Wprowadzenie + IntelliJ | 03.03 | MD |
+ 2  | JDK Updates (od wersji 9 do wersji 23/24) | 10.03 | ZN |
  3  || 17.03 ||                                        
  4  | Przedstawienie pomysłu na projekt | 24.03 ||                                             
  5  || 31.03 ||
