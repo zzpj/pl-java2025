@@ -5,7 +5,7 @@ Introductory meeting
 # Java - Git
 
 **Task 1 - Java & sdkman**
-- Install one of the latest Java (JDK 21): [jdk-link](https://www.oracle.com/pl/java/technologies/downloads/)
+- Install one of the latest Java (JDK 23): [jdk-link](https://www.oracle.com/pl/java/technologies/downloads/)
 - Set environment variable: *JAVA_HOME* in your operating system
 - Using command line or terminal, type: *java --version*
 - ![](https://github.com/zzpj/pl-java2024/blob/main/intro/jdk21-mint.png "jdk21 mint")
