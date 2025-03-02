@@ -51,7 +51,7 @@
 ## Ramowy plan zajęć
  Lp | Temat | Data       | Prowadzący | Uwagi                                                                                                  
 ----|---------------------|------------|------------|-------------
- 1  | Wprowadzenie + IntelliJ | 03.03 | MD |
+ 1  | Wprowadzenie + IntelliJ | 03.03 | MD | [Materiały na zajęcia](https://github.com/zzpj/pl-java2025/tree/main/intro-intellij) 
  2  | JDK Updates (od wersji 9 do wersji 23/24) | 10.03 | ZN |
  3  || 17.03 ||                                        
  4  | Przedstawienie pomysłu na projekt | 24.03 ||                                             
