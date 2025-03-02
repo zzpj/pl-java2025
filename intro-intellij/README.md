@@ -1,7 +1,22 @@
-Intro + Intellij orientation
+# Intro + Intellij orientation
 
+Introductory meeting
 
-Przydatne materiały:
+# Java - Git
+
+**Task 1 - Java & sdkman**
+- Install one of the latest Java (JDK 21): [jdk-link](https://www.oracle.com/pl/java/technologies/downloads/)
+- Set environment variable: *JAVA_HOME* in your operating system
+- Using command line or terminal, type: *java --version*
+- ![](https://github.com/zzpj/pl-java2024/blob/main/intro/jdk21-mint.png "jdk21 mint")
+- Manage SDK (including JDK) like a pro - using https://sdkman.io/ (Linux/Windows/Mac friendly)
+
+**Task 2 - Git**
+- GitHub account creation: [sign up](https://github.com/)
+- Git familiarization: [learn git branching](https://learngitbranching.js.org/)
+- [Interesting GIT aliases](https://github.com/jakubnabrdalik/gitkurwa)
+
+Notable resources:
 - 
 
 + [Pet Clinic Project](https://github.com/spring-projects/spring-petclinic)
