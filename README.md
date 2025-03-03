@@ -1,6 +1,6 @@
 # PŁ: Zaawansowane Zagadnienia Programowania w Javie - Edycja 2025
 
-## Zaliczenie - zarys 2025
+## Zaliczenie 2025
 
 - Projekt grupowy: od 3 do 6 osób (brak odstępstw)
 - Tematyka realizowanego projektu: dowolna
@@ -35,7 +35,7 @@
 - Refleksja w Javie
 - Cucumber (BDD) + AssertJ
 - Integracja z modelami AI przez http + biblioteki do AI w Javie
-- Statyczna analizę kodu
+- Statyczna analiza kodu
 - Współbieżność
 - Interoperacyjność Javy np. z Pythonem
 - Spring 101: Podstawowe zagadnienia, MVC, RestController, HttpClient, JPA
