@@ -41,7 +41,7 @@
 - Spring 101: Podstawowe zagadnienia, MVC, RestController, HttpClient, JPA
 - Spring 102: Security
 - Spring 103: Spring proxy-based AOP + AspectJ + Spring aspectj-based AOP
-- Spring 104: Tranzakcje, mechanizm Retryable, OpenAPI
+- Spring 104: Transakcje, mechanizm Retryable, OpenAPI
 - Mikroserwisy 101: praktyczne podstawy budowy systemu z wykorzystaniem REST i Spring Cloud Eureka  
 - Microserwisy 102: zaawansowane tematy związane z wykorzystaniem narzędzi do zarządznia autoryzacją i autentykacją użytkowników i serwisów (Keycloak vs Spring Authorization Server)
 - Mutation testing (pitest)
@@ -53,7 +53,7 @@
  Lp | Temat | Data       | Prowadzący | Uwagi                                                                                                  
 ----|---------------------|------------|------------|-------------
  1  | Wprowadzenie + IntelliJ | 03.03 | MD | [Materiały na zajęcia](https://github.com/zzpj/pl-java2025/tree/main/intro-intellij) 
- 2  | JDK Updates (od wersji 9 do wersji 23/24) | 10.03 | ZN |
+ 2  | JDK Updates (od wersji 9 do wersji 24) | 10.03 | ZN | [Materiały na zajecia](amber%2FREADME.md)
  3  || 17.03 ||                                        
  4  | Przedstawienie pomysłu na projekt | 24.03 ||                                             
  5  || 31.03 ||

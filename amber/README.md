@@ -581,6 +581,11 @@ class GeometricalOperations {
 ```
 1. Dodajemy słowo kluczowe `permits` to klasy `Shapeable` i ograniczamy do klasy `Shape`, która powinna się oznaczyć jako `non-sealed`
 2. Zmieniamy przy klasie `Shape` na `sealed` i dodajemy `permits Circle, Triangle`
+```java
+abstract sealed class Shape implements Shapeable permits Circle, Triangle {
+    abstract int getNumberOfSides();
+}
+```
 3. Oznaczamy klasy `Triangle` i `Cirle` jako `non-sealed` albo `final`
 4. Próbujemy `class GeometricalOperations extends Shape` jednak nie jest na liście dozwolonych klas
 
@@ -669,7 +674,9 @@ URL url_deprecated = new URL("http://github.com");
 URL url_new = URI.create("http://github.com").toURL();
 ```
 
-## JDK22 - nienazwane zmienne i wzorca (ang. Unnamed Variables & Patterns)
+## Eksperymentalne funkcje
+
+### Nienazwane zmienne i wzorce (ang. Unnamed Variables & Patterns) (JDK22)
 
 ```java
 public static void main(String[] args) {
@@ -682,10 +689,9 @@ public static void main(String[] args) {
     }
 }
 ```
-
 Uruchom z terminala: `java --enable-preview --source 22 Sandbox.java`
 
-## Java 21-22 - eksperymentalnie - odchudzenie protokołu uruchomieniowego (ang. launch protocol)
+### Odchudzenie protokołu uruchomieniowego (ang. launch protocol) (JDK23)
 
 ```java
 package com.example;
@@ -709,5 +715,27 @@ void main() {
 
 Lub z konsoli `java --enable-preview --source 22 Sandbox.java`
 
-## Java 23
-## Java 24
+### Stream Gatherers
+
+```java
+void main() {
+  List<String> words = List.of("the", "be", "two", "of", "and", "a", "in", "that");
+
+  List<String> list = words.stream()
+      .gather(filtering(string -> string.length() >= 3))
+      .toList();
+
+  System.out.println(list);
+}
+
+private <T> Gatherer<T, Void, T> filtering(Predicate<T> predicate) {
+  return Gatherer.of(Gatherer.Integrator.ofGreedy(
+      (_, element, downstream) -> {
+        if (predicate.test(element)) {
+          return downstream.push(element);
+        } else {
+          return true;
+        }
+      }));
+}
+```
