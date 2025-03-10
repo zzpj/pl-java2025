@@ -675,6 +675,7 @@ URL url_new = URI.create("http://github.com").toURL();
 ```
 
 ## Eksperymentalne funkcje
+[Uruchamianie funkcji eksperymentalnych w IntelliJ](https://medium.com/javarevisited/enabling-the-preview-feature-in-intellij-735067948d6e)
 
 ### Nienazwane zmienne i wzorce (ang. Unnamed Variables & Patterns) (JDK22)
 
@@ -689,7 +690,7 @@ public static void main(String[] args) {
     }
 }
 ```
-Uruchom z terminala: `java --enable-preview --source 22 Sandbox.java`
+Intellij z funkcjami eksperymentalnymi lub uruchom z terminala: `java --enable-preview --source 22 Sandbox.java`
 
 ### Odchudzenie protokołu uruchomieniowego (ang. launch protocol) (JDK23)
 
@@ -715,7 +716,7 @@ void main() {
 
 Lub z konsoli `java --enable-preview --source 22 Sandbox.java`
 
-### Stream Gatherers
+### Stream Gatherers (JDK24)
 
 ```java
 void main() {
