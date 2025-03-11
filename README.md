@@ -78,10 +78,10 @@
  6  | Spring 102: Security                                                                                               | 07.04 |            |
  7  | Java Reflections + proxy-based AOP                                                                                 | 28.04 | MK         |
  8  | AspectJ + aspect-based AOP                                                                                         | 05.05 | MK         |
- 9  | Mikroserwisy 101: praktyczne podstawy budowy systemu z wykorzystaniem REST i Spring Cloud Eureka                   | 12.05 | ZN         |
- 10 | Mikroserwisy 102: zaawansowane tematy związane z wykorzystaniem narzędzi do zarządzania autoryzacją i autentykacją | 19.05 | ZN         |
+ 9  | Testy mutacyjne                   | 12.05 | MD         |
+ 10 | Mikroserwisy 101: praktyczne podstawy budowy systemu z wykorzystaniem REST i Spring Cloud Eureka | 19.05 | ZN         |
  11 | Sprawdzanie postępu realizacji projektu                                                                            | 26.05 | -          |
- 12 |                                                                                                                    | 02.06 |            |
- 13 |                                                                                                                    | 09.06 |            |
- 14 |                                                                                                                    | 16.06 |            |
+ 12 | Mikroserwisy 102: zaawansowane tematy związane z wykorzystaniem narzędzi do zarządzania autoryzacją i autentykacją | 02.06 |   ZN         |
+ 13 | Spring 104: Transakcje, mechanizm Retryable, OpenAPI                                                                                                                   | 09.06 |            |
+ 14 | From Java to Go                                                                                                                   | 16.06 |   MD         |
  15 | Finalne przedstawienie zrealizowanego projektu                                                                     | 23.06 | -          |
