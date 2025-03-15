@@ -3,4 +3,3 @@
 2. Kacper Przybylski 247770
 3. Kacper Stasiak 247792
 4. Kacper Witek 247822
-5. Oskar Kacprzak 247026
