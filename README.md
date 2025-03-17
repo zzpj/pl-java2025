@@ -74,14 +74,14 @@
  2  | JDK Updates (od wersji 9 do wersji 24)                                                                             | 10.03 | ZN         | [Materiały na zajecia](amber%2FREADME.md)                                            
  3  | Cucumber (BDD) + AssertJ                                                                                           | 17.03 | ŁCh        |
  4  | Przedstawienie pomysłu na projekt                                                                                  | 24.03 | -          |
- 5  | Spring 101: Podstawowe zagadnienia, MVC, RestController, HttpClient, JPA                                           | 31.03 |            |
- 6  | Spring 102: Security                                                                                               | 07.04 |            |
+ 5  | Spring 101: Podstawowe zagadnienia, MVC, RestController, HttpClient, JPA                                           | 31.03 | ŁCh        |
+ 6  | Testy Mutacyjne                                                                                                    | 07.04 | MD         |
  7  | Java Reflections + proxy-based AOP                                                                                 | 28.04 | MK         |
  8  | AspectJ + aspect-based AOP                                                                                         | 05.05 | MK         |
- 9  | Testy mutacyjne                                                                                                    | 12.05 | MD         |
+ 9  | LLM                                                                                                                | 12.05 | ŁCh        |
  10 | Mikroserwisy 101: praktyczne podstawy budowy systemu z wykorzystaniem REST i Spring Cloud Eureka                   | 19.05 | ZN         |
  11 | Sprawdzanie postępu realizacji projektu                                                                            | 26.05 | -          |
- 12 | Mikroserwisy 102: zaawansowane tematy związane z wykorzystaniem narzędzi do zarządzania autoryzacją i autentykacją | 02.06 | ZN         |
- 13 | Spring 104: Transakcje, mechanizm Retryable, OpenAPI                                                               | 09.06 |            |
+ 12 | Mikroserwisy 102 (+ Spring Security): zaawansowane tematy związane z wykorzystaniem narzędzi do zarządzania autoryzacją i autentykacją | 02.06 | ZN         |
+ 13 | Spring 104: Transakcje, mechanizm Retryable, OpenAPI ??                                                            | 09.06 | ??         |
  14 | From Java to Go                                                                                                    | 16.06 | MD         |
  15 | Finalne przedstawienie zrealizowanego projektu                                                                     | 23.06 | -          |
