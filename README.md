@@ -76,12 +76,12 @@
  4  | Przedstawienie pomysłu na projekt                                                                                  | 24.03 | -          |
  5  | Spring 101: Podstawowe zagadnienia, MVC, RestController, HttpClient, JPA                                           | 31.03 | ŁCh        |
  6  | Testy Mutacyjne                                                                                                    | 07.04 | MD         |
- 7  | Java Reflections + proxy-based AOP                                                                                 | 28.04 | MK         |
- 8  | AspectJ + aspect-based AOP                                                                                         | 05.05 | MK         |
+ 7  | Logi + Observability (JMX+Spring Atuators/Endpoints)                                                                                | 28.04 | MK         |
+ 8  | Spring AOP                                                                                         | 05.05 | MK         |
  9  | LLM                                                                                                                | 12.05 | ŁCh        |
- 10 | Mikroserwisy 101: praktyczne podstawy budowy systemu z wykorzystaniem REST i Spring Cloud Eureka                   | 19.05 | ZN         |
+ 10 | Mikroserwisy 101: praktyczne podstawy budowy systemu z wykorzystaniem REST i Spring Cloud Eureka                   | 19.05 | ZN         | H
  11 | Sprawdzanie postępu realizacji projektu                                                                            | 26.05 | -          |
  12 | Mikroserwisy 102 (+ Spring Security): zaawansowane tematy związane z wykorzystaniem narzędzi do zarządzania autoryzacją i autentykacją | 02.06 | ZN         |
- 13 | Spring 104: Transakcje, mechanizm Retryable, OpenAPI ??                                                            | 09.06 | ??         |
- 14 | From Java to Go                                                                                                    | 16.06 | MD         |
+ 13 | From Java to Go                                                         | 09.06 | MD         | H
+ 14 | TBD                                                                                                    | 16.06 | MK         |
  15 | Finalne przedstawienie zrealizowanego projektu                                                                     | 23.06 | -          |
