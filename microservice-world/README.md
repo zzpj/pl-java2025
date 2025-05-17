@@ -345,3 +345,100 @@ public class TrainTripsOrganizerServiceApplication {
 ```
 
 * run and test
+
+## Read & watch about microservices (theoretical part)
+
+### How to start (to be revised)
+
+* [https://microservices.io/](https://microservices.io/)
+* [12factor.net](https://12factor.net/)
+
+### Online courses (to be revised)
+
+* https://app.pluralsight.com/library/courses/getting-started-microservices
+* https://app.pluralsight.com/library/courses/microservices-fundamentals
+* https://app.pluralsight.com/library/courses/building-reactive-microservices (Java demo app)
+* https://app.pluralsight.com/library/courses/microservices-security-fundamentals
+* https://app.pluralsight.com/library/courses/java-microservices-spring-cloud-developing-services
+* https://app.pluralsight.com/library/courses/java-microservices-spring-cloud-coordinating-services
+
+### Youtube (to be revised)
+
+* https://youtu.be/P4iomsHmOW0
+* https://youtu.be/GBTdnfD6s5Q
+
+### Spring Cloud documentation (to be revised)
+
+* https://spring.io/projects/spring-cloud
+
+### Infographics (to be revised)
+* [Róźne propozycje architektur](img/arch-styles.png)
+* [Wzorce architektoniczne](img/arch-patterns.png)
+* [Architektura mikroserwisowa](img/micro-arch.png)
+
+## Eureka Server
+
+* Create second service with use of `start.spring.io`
+    * Project: Maven
+    * Language: Java
+    * Spring Boot: 3.4.5
+    * Project Metadata Group: com.zzpj
+    * Artifact: TrainTripsApp
+    * Name: TrainTripsApp
+    * Description: Demo project for Spring Boot
+    * Package name: com.zzpj.TrainTripsApp
+    * Packaging: Jar
+    * Java: 21
+    * Dependencies: Web, Eureka Server
+* Open main class with `@SpringBootApplication` annotation
+* Use Spring Cloud’s `@EnableEurekaServer` to stand up a registry with which other applications can communicate. This is
+  a regular Spring Boot application with one annotation added to enable the service registry.
+* By default, the registry also tries to register itself, so you need to disable that behavior as well
+  in  `application.properties` file.
+   ```properties
+   eureka.client.register-with-eureka=false
+   eureka.client.fetch-registry=false
+   ```
+* Select the port which will be used by Eureka Server
+   ```properties
+   server.port=8761
+   ```
+* Enter URL: `http://localhost:8761/`
+
+
+### Register both, newly created services
+
+* Complete `pom.xml`:
+  ```xml
+  <spring-cloud.version>2024.0.1</spring-cloud.version>
+  ```
+  ```xml
+  <dependency>
+     <groupId>org.springframework.cloud</groupId>
+     <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+  </dependency>
+  ```
+  ```xml
+  <dependencyManagement>
+     <dependencies>
+         <dependency>
+             <groupId>org.springframework.cloud</groupId>
+             <artifactId>spring-cloud-dependencies</artifactId>
+             <version>${spring-cloud.version}</version>
+             <type>pom</type>
+             <scope>import</scope>
+         </dependency>
+     </dependencies>
+  </dependencyManagement>
+  ```
+* Add annotation `@EnableDiscoveryClient` to main class
+* Add some properties into `application.properties`
+   ```properties
+   eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/
+   eureka.client.fetch-registry=true
+   eureka.client.register-with-eureka=true
+   ```
+* Run all services and determine if service has been registered in Eureka Discovery Server, either by
+  entering `http://localhost:8761/` or using logs.
+
+### Spring Cloud Client Load balancer
