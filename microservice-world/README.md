@@ -442,3 +442,186 @@ public class TrainTripsOrganizerServiceApplication {
   entering `http://localhost:8761/` or using logs.
 
 ### Spring Cloud Client Load balancer
+1. [Load balancer - grafika](img/load-balancer.jpg)
+1. Stop running `TrainTripsManager` and comment `server.port` properties
+1. Add `TestController`:
+   ```java
+    @RestController
+    class TestController {
+    
+        @Value("${spring.application.name}")
+        private String applicationName;
+    
+        @Value("${server.port}")
+        private String appPort;
+    
+        @GetMapping("/hello/{name}")
+        public String getServiceName(@PathVariable("name") String name) {
+            return "Hello " + name + ", you are using " + applicationName + " on port: " + appPort;
+        }
+    }
+   ```
+1. Run two (or more) instances using Spring Boot Run Configuration, use Environment > VM Options for setting ports:
+  * `-Dserver.port=8021`
+  * `-Dserver.port=8022`
+  * `-Dserver.port=8023`
+1. Refresh Eureka Discovery page and determine if both instances of the same service are available
+1. Add load balancer dependency in `TrainTripsOrganizerService` project
+   ```xml
+   <dependency>
+       <groupId>org.springframework.cloud</groupId>
+       <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+   </dependency>
+   ```
+1. `TrainTripsManagerSupplier` implementation:
+   ```java
+    class TrainTripsManagerSupplier implements ServiceInstanceListSupplier {
+    
+        private final String serviceId;
+    
+        TrainTripsManagerSupplier(String serviceId) {
+            this.serviceId = serviceId;
+        }
+    
+        @Override
+        public String getServiceId() {
+            return serviceId;
+        }
+    
+        @Override
+        public Flux<List<ServiceInstance>> get() {
+            ServiceInstance int1 = new DefaultServiceInstance("001", serviceId, "localhost", 8021, false);
+            ServiceInstance int2 = new DefaultServiceInstance("002", serviceId, "localhost", 8022, false);
+            ServiceInstance int3 = new DefaultServiceInstance("003", serviceId, "localhost", 8023, false);
+            return Flux.just(List.of(int1, int2, int3));
+        }
+    }
+   ```   
+1. Create `restTemplate` and `ServiceInstanceListSupplier` beans:
+   ```java
+    @Bean
+    public ServiceInstanceListSupplier serviceInstanceListSupplier() {
+        return new TrainTripsManagerSupplier("train-trips-service");
+    }
+    
+    @Bean
+    @LoadBalanced
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+   ```
+
+1. `TrainTripsOrganizerController` implementation:
+   ```java
+    @RestController
+    class TrainTripsOrganizerController {
+        private final RestTemplate restTemplate;
+    
+        @Value("${spring.application.name}")
+        private String applicationName;
+    
+        TrainTripsOrganizerController(RestTemplate restTemplate) {
+            this.restTemplate = restTemplate;
+        }
+    
+        @GetMapping("/info")
+        public String getHello() {
+            ResponseEntity<String> forEntity = restTemplate.getForEntity("http://train-trips-service/hello/" + applicationName, String.class);
+            return forEntity.getBody();
+        }
+    }
+   ```
+1. Verify URL: `http://localhost:8030/info`
+1. OpenAPI case by modifying `api.yaml`:
+```yaml
+servers:
+  - url: http://localhost:{port}/
+    description: local dev instance
+    variables:
+      port:
+        default: '8021'
+        enum:
+          - '8021'
+          - '8022'
+          - '8023'
+```
+1. Run mvn:  `mvn clean install`
+1. Modify `CommandLineRunner` bean:
+    ```java
+    @Bean
+    @LoadBalanced
+    public CommandLineRunner commandLineRunner(StationsApi stationsApi) {
+        return args -> {
+            System.out.println(stationsApi.getApiClient().getBasePath());
+            stationsApi.getStations().forEach(System.out::println);
+        };
+    }    
+    ```
+1. Rerun for OpenAPI
+
+## Config Server
+
+1. Open [Spring Initializr website](https://start.spring.io/)
+1. Complete Metadata section: set Artifact name as `TrainTripsConfigServer`
+    * Project: Maven
+    * Language: Java
+    * Spring Boot: 3.4.5
+    * Project Metadata Group: com.zzpj
+    * Artifact: TrainTripsConfigServer
+    * Name: TrainTripsConfigServer
+    * Description: Demo project for Spring Boot
+    * Package name: com.zzpj.TrainTripsConfigServer
+    * Packaging: Jar
+    * Java: 21
+    * Dependencies: Spring Web, Eureka Discovery Client, Config Server
+1. Click Generate button, download and unzip package
+1. Copy unzipped `TrainTripsConfigServer` folder into your project folder
+1. Add following annotations: `@EnableDiscoveryClient` & `@EnableConfigServer` into main class
+1. Add some properties into `application.properties`
+   ```properties
+    spring.application.name=TrainTripsConfigServer
+    server.port=8040
+    eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/
+    
+    spring.cloud.config.server.git.uri=https://github.com/zzpj/demo-config-server.git
+    spring.cloud.config.server.git.default-label=main
+    spring.cloud.config.server.git.clone-on-start=true
+   ```
+1. Show Github repo in IntelliJ or browser: https://github.com/zzpj/demo-config-server.git
+1. Complete `pom.xml` of `TrainTripsOrganizerService`
+   ```xml
+   <dependency>
+       <groupId>org.springframework.cloud</groupId>
+       <artifactId>spring-cloud-starter-config</artifactId>
+   </dependency>
+   ```
+1. Go to `application.properties` files and add:
+   ```properties
+    spring.config.import=optional:configserver:
+    spring.cloud.config.discovery.enabled=true
+    spring.cloud.config.discovery.service-id=TrainTripsConfigServer
+    #spring.cloud.config.name=${spring.application.name}
+    spring.cloud.config.name=train-trips-organizer-service
+    spring.cloud.config.profile=dev
+    spring.cloud.config.label=main
+    spring.cloud.config.fail-fast=true
+   ```
+1. Add properties check with use of `@Value` annotation
+   ```java
+    @Value("${config.server.demo}")
+    private String message;
+    
+    @GetMapping("/getMessage")
+    public String getMessage() {
+        return "Property value: " + message;
+    }
+   ```
+1. Remember about following properties naming rules
+   ```
+   /{application}/{profile}[/{label}]
+   /{application}-{profile}.yml
+   /{label}/{application}-{profile}.yml
+   /{application}-{profile}.properties
+   /{label}/{application}-{profile}.properties
+   ```
+
