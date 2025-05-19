@@ -348,36 +348,19 @@ public class TrainTripsOrganizerServiceApplication {
 
 ## Read & watch about microservices (theoretical part)
 
-### How to start (to be revised)
-
+### How to start
 * [https://microservices.io/](https://microservices.io/)
 * [12factor.net](https://12factor.net/)
 
-### Online courses (to be revised)
-
-* https://app.pluralsight.com/library/courses/getting-started-microservices
-* https://app.pluralsight.com/library/courses/microservices-fundamentals
-* https://app.pluralsight.com/library/courses/building-reactive-microservices (Java demo app)
-* https://app.pluralsight.com/library/courses/microservices-security-fundamentals
-* https://app.pluralsight.com/library/courses/java-microservices-spring-cloud-developing-services
-* https://app.pluralsight.com/library/courses/java-microservices-spring-cloud-coordinating-services
-
-### Youtube (to be revised)
-
-* https://youtu.be/P4iomsHmOW0
-* https://youtu.be/GBTdnfD6s5Q
-
-### Spring Cloud documentation (to be revised)
-
+### Spring Cloud documentation
 * https://spring.io/projects/spring-cloud
 
-### Infographics (to be revised)
+### Infographics
 * [Róźne propozycje architektur](img/arch-styles.png)
 * [Wzorce architektoniczne](img/arch-patterns.png)
 * [Architektura mikroserwisowa](img/micro-arch.png)
 
 ## Eureka Server
-
 * Create second service with use of `start.spring.io`
     * Project: Maven
     * Language: Java
