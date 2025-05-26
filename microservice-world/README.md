@@ -608,3 +608,5 @@ servers:
    /{label}/{application}-{profile}.properties
    ```
 
+## Spring Security + Keycloak + Spring Authorization Server
+[next class: secure your microservices and authorize your users](README2.md)
