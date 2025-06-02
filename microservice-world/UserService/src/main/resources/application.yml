@@ -1,0 +1,17 @@
+server:
+  port: 8081
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          client:
+            client-id: client
+            client-secret: nDvTeyieAuhI1Pm5IuOqh9KFPzv999b5
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            authorization-grant-type: authorization_code
+            scope: openid, profile
+        provider:
+          client:
+            issuer-uri: http://localhost:8999/realms/master
