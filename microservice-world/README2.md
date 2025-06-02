@@ -232,6 +232,41 @@
 --TODO: moze wykorzystać `Authentication auth = SecurityContextHolder.getContext().getAuthentication();` zamiast
 JSON? => *Jak starczy czasu...*
 
+
+## Servery authoryzujące i autentykujące - teoria
+Standardy OAuth 2.0 i OpenID Connect (OIDC) to dwa powiązane protokoły używane do uwierzytelniania i autoryzacji w aplikacjach internetowych i mobilnych. Oto krótkie wyjaśnienie każdego z nich:
+
+### OAuth 2.0 – autoryzacja
+OAuth 2.0 to protokół autoryzacji, czyli przyznawania dostępu aplikacjom do zasobów użytkownika bez udostępniania jego hasła.
+
+Kluczowe cechy:
+- Umożliwia aplikacjom trzecim dostęp do zasobów (np. danych użytkownika) przechowywanych na innym serwerze (np. Google, Facebook).
+- Opiera się na tokenach dostępu (access tokens), które pozwalają uzyskać dostęp do API.
+- Użytkownik loguje się w zaufanym serwerze (np. Google), a następnie przyznaje dostęp aplikacji.
+
+Główne role:
+- Resource Owner – właściciel danych (np. użytkownik)
+- Client – aplikacja chcąca uzyskać dostęp do danych
+- Authorization Server – serwer wydający tokeny (np. Google OAuth)
+- Resource Server – serwer przechowujący dane (np. API z danymi użytkownika)
+
+### OpenID Connect (OIDC) – uwierzytelnianie
+OpenID Connect to warstwa zbudowana na bazie OAuth 2.0, która dodaje mechanizm uwierzytelniania (czyli potwierdzenia tożsamości użytkownika).
+
+Kluczowe cechy:
+- Rozszerza OAuth 2.0 o możliwość logowania się użytkownika (Single Sign-On).
+- Oprócz tokena dostępu zwraca też ID Token, który zawiera informacje o użytkowniku (np. e-mail, imię).
+- Używany np. przez Google, Microsoft, Facebook do logowania się do innych usług.
+
+Token JWT (JSON Web Token), zawiera:
+  - dane użytkownika (claims), 
+  - informacje o czasie ważności, 
+  - podpis cyfrowy.
+
+Dokumentacja: 
+- Oauth2.1: https://datatracker.ietf.org/doc/html/rfc6749
+- OpenID: https://openid.net/specs/openid-connect-core-1_0.html
+
 ## Spring Authorization Server
 
 ### *Server side*
@@ -335,10 +370,12 @@ spring:
    @Controller
    class HomeController {
    
-       @GetMapping("/")
-       public String home(@AuthenticationPrincipal OidcUser user) {
-           return "Hi, " + user.getName();
-       }
+    @GetMapping("/hello")
+    public ResponseEntity<String> home(@AuthenticationPrincipal OidcUser user) {
+        String hello = "Hi, " + user.getName();
+        System.out.println(hello);
+        return ResponseEntity.ok(hello);
+    }
    }
    ```
 
@@ -469,4 +506,39 @@ public class TrainTripUsersAdapterApplication {
         };
     }
 }
+```
+
+### _Github_ Identity Provider
+
+1. W Keycloaku, dodać nowego providera poprzez wybranie z lewego menu "Identity Providers" i wybraniu kafelka z Githubem
+1. Jednocześnie na stronie Githuba, dodać OAuth app [link](https://github.com/settings/developers)
+1. Na stronie Github'a, jako "Authorization callback URL" ustaw URL skopiowany ze strony Keycloaka _Redirect URI_
+2. HomePage url na zgodny z naszym serwisem klienckim: `http://localhost:8081`
+1. W keycloaku, uzupełnij _Client ID_ & _Client Secret_ (skopiowany ze strony Github'a)
+1. Zaawansowane ustawienia na _off_, _First login flow_: first broker login
+1. Zapisz i sprawdź: `http://localhost:8081/` poprzez logowanie się kredkami z github'a
+2. To samo w Spring Authorization server poprzez dodanie w yml:
+```yaml
+server:
+  port: 8081
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          client:
+            client-id: client
+            client-secret: secret
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            authorization-grant-type: authorization_code
+            scope: openid, profile
+          github:
+            client-name: Login me with Github
+            client-id: github
+            client-secret: #######
+        provider:
+          client:
+            issuer-uri: http://auth.mydomain.com:8080
+            #issuer-uri: http://localhost:8999/realms/master
 ```
