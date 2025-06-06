@@ -82,6 +82,6 @@
  10 | Mikroserwisy 101: praktyczne podstawy budowy systemu z wykorzystaniem REST i Spring Cloud Eureka                   | 19.05 | ZN         | H
  11 | Sprawdzanie postępu realizacji projektu                                                                            | 26.05 | -          |
  12 | Mikroserwisy 102 (+ Spring Security): zaawansowane tematy związane z wykorzystaniem narzędzi do zarządzania autoryzacją i autentykacją | 02.06 | ZN         |
- 13 | From Java to Go                                                         | 09.06 | MD         | H
+ 13 | From Java to Go                                                         | 09.06 | MD         | [Materiały na zajęcia](java-to-go%2FREADME.MD)
  14 | TBD                                                                                                    | 16.06 | MK         |
  15 | Finalne przedstawienie zrealizowanego projektu                                                                     | 23.06 | -          |

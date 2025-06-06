@@ -1,0 +1,16 @@
+4) You have a list of integers (simulating data points from a sensor) and you want to process each one (for example square it) concurrently.
+
+Create a simple program that:
+
+- starts several goroutines to do concurrent tasks,
+- uses buffered channel,
+- uses defer to log when each task is finished.
+
+-------------------------------------
+
+- handles work in parallel (concurrent task execution)
+- channel - communication between goroutines
+- defer - cleans up per-task (or globally) — closes the channel safely
+- buffered channel - prevents blocking when sending if receiver isn’t ready
+
+-------------------------------------

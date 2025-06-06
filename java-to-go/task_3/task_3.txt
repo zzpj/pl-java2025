@@ -1,0 +1,15 @@
+3) Create a Go program that:
+
+- defines a User struct,
+- reads a JSON string representing a user from a variable (simulating an API or config file),
+- unmarshals the JSON into a struct,
+- modifies the data (e.g., updates the user’s nickname),
+- marshals it back to a JSON string and prints it.
+
+-------------------------------------
+
+- how Go connects JSON fields to struct fields
+- json.Unmarshal() - Convert JSON → Go struct
+- json.MarshalIndent() - Convert Go struct → pretty JSON
+
+-------------------------------------

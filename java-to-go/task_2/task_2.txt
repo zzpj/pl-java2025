@@ -1,0 +1,21 @@
+2) Write a function that will fill the structure Person based on the given arguments.
+
+type Person struct {
+	FirstName string
+	LastName  string
+	Age       int
+}
+
+Validate the arguments! Names shouldn't be empty and age should be greater than 0.
+If arguments are invalid, return error.
+You can try to implement your own error type, call it ValidationError.
+Additionally check what are errors.Is and errors.As. Try them.
+
+-------------------------------------
+
+- structure
+- errors and custom errors
+- errors.Is, errors.As
+- a function can return more than one argument
+
+-------------------------------------

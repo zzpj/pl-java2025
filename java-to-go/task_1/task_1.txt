@@ -1,0 +1,21 @@
+1) Calculate the price of an advertising campaign, where all kinds of the advertisements implements interface Advertisement:
+
+type Advertisement interface {
+	calculatePrice() int
+}
+
+The campaign will be run in the following media: billboards, radio and newspapers.
+Each of media has its own way of calculating the price of the advertisements, for example in case of billboards the price depends on billboard surface, number of rental hours and hourly rate per square meter.
+
+Write a function that takes a []Advertisement and sums the prices of all of them.
+Print the final result.
+
+-------------------------------------
+
+- interfaces
+In Go interface resolution is implicit. If the type you pass in matches what the interface is asking for, it will compile.
+- structures
+- polymorphism
+- for... range
+
+-------------------------------------
